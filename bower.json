@@ -1,0 +1,22 @@
+{
+  "name": "tec-q",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "nuderand <nuderebatsin.roal@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/nuderand/tec-q",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.4.0",
+    "bootstrap": "~3.3.5"
+  }
+}
