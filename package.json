@@ -1,0 +1,38 @@
+{
+  "name": "tec-q",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nuderand/tec-q.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nuderand/tec-q/issues"
+  },
+  "homepage": "https://github.com/nuderand/tec-q#readme",
+  "dependencies": {
+    "vue": "^1.0.3",
+    "vue-router": "^0.7.5"
+  },
+  "devDependencies": {
+    "babel-core": "^5.8.33",
+    "babel-loader": "^5.3.3",
+    "babel-runtime": "^5.8.29",
+    "css-loader": "^0.21.0",
+    "http-server": "^0.8.5",
+    "node-sass": "^3.4.1",
+    "sass-loader": "^3.1.1",
+    "style-loader": "^0.13.0",
+    "template-html": "0.0.2",
+    "vue-hot-reload-api": "^1.2.1",
+    "vue-html-loader": "^1.0.0",
+    "vue-loader": "^6.0.0",
+    "webpack": "^1.12.2"
+  }
+}
