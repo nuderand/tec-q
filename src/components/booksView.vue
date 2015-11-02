@@ -9,8 +9,7 @@
 <template>
   <div class="container l_books">
     <h1>Books</h1>
-    <button class="btn btn-success" v-show="price" @click="changePrice">Change Japanese Money</button>
-    <button class="btn btn-success" v-show="!price" @click="changePrice">Change American Money</button>
+    <button class="btn btn-success" @click="changePrice">{{ price ? 'Change Japanese Money' : 'Change American Money' }}</button>
     <table class="table l_books_table">
       <thead>
         <tr>
@@ -18,8 +17,7 @@
             @click="sortBy(key)"
             class="l_books_table_head">
             {{ key | capitalize }}
-            <i class="fa fa-sort-asc" v-show="sortOrders[key] > 0 ? true : false"></i>
-            <i class="fa fa-sort-desc" v-show="sortOrders[key] > 0 ? false : true"></i>
+            <i class="fa" v-bind:class="{ 'fa-sort-asc': sortOrders[key] > 0, 'fa-sort-desc': sortOrders[key] < 0 }"></i>
           </th>
         </tr>
       </thead>
