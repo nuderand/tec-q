@@ -7,6 +7,7 @@
           <th>ID</th>
           <th>タイトル</th>
           <th>価格</th>
+          <th>作者</th>
         </tr>
       </thead>
       <tbody>
@@ -14,6 +15,7 @@
           <td>{{ book.id }}</td>
           <td>{{ book.title }}</td>
           <td>{{ book.price }}</td>
+          <td>{{ book.author }}</td>
         </tr>
       </tbody>
     </table>
