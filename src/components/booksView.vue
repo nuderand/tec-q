@@ -1,17 +1,29 @@
+<style lang="sass">
+.l_books {
+  .l_books_table_head {
+    cursor: pointer;
+  }
+}
+</style>
+
 <template>
-  <div class="container">
+  <div class="container l_books">
     <h1>Books</h1>
-    <table class="table">
+    <table class="table l_books_table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>タイトル</th>
-          <th>価格</th>
-          <th>作者</th>
+          <th v-for="key in columns"
+            @click="sortBy(key)"
+            class="l_books_table_head">
+            {{ key | capitalize }}
+            <i class="fa fa-sort-asc" v-show="sortOrders[key] > 0 ? true : false"></i>
+            <i class="fa fa-sort-desc" v-show="sortOrders[key] > 0 ? false : true"></i>
+          </th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="book in books">
+        <tr v-for="book in books
+          | orderBy sortKey sortOrders[sortKey]">
           <td>{{ book.id }}</td>
           <td>{{ book.title }}</td>
           <td>{{ book.price }}</td>
@@ -25,12 +37,21 @@
 <script>
 import store from './../store'
 
+const columns =  ['id', 'title', 'price', 'author']
+let sortOrders = {}
+columns.forEach(function (key) {
+  sortOrders[key] = 1
+})
+
 export default {
   name: 'BooksView',
 
   data () {
     return {
-      books: []
+      books: [],
+      columns: columns,
+      sortKey: '',
+      sortOrders: sortOrders
     }
   },
 
@@ -43,6 +64,10 @@ export default {
   methods: {
     updateBook (data) {
       this.books = data
+    },
+    sortBy (key) {
+      this.sortKey = key
+      this.sortOrders[key] = this.sortOrders[key] * -1
     }
   }
 }
