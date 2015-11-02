@@ -3,6 +3,7 @@
     <h1>Welcome Teq-Q</h1>
     <a v-link="{ path: '/login' }">Login Page</a>
     <a v-link="{ path: '/signup' }">SignUp Page</a>
+    <a v-link="{ path: '/books' }">Books Page</a>
   </div>
 </template>
 

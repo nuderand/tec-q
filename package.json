@@ -18,6 +18,8 @@
   "homepage": "https://github.com/nuderand/tec-q#readme",
   "dependencies": {
     "bootstrap": "^3.3.5",
+    "es6-promise": "^3.0.2",
+    "http-server": "^0.8.5",
     "jquery": "^2.1.4",
     "vue": "^1.0.3",
     "vue-router": "^0.7.5"
