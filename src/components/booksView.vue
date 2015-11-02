@@ -9,6 +9,8 @@
 <template>
   <div class="container l_books">
     <h1>Books</h1>
+    <button class="btn btn-success" v-show="price" @click="changePrice">Change Japanese Money</button>
+    <button class="btn btn-success" v-show="!price" @click="changePrice">Change American Money</button>
     <table class="table l_books_table">
       <thead>
         <tr>
@@ -51,23 +53,27 @@ export default {
       books: [],
       columns: columns,
       sortKey: '',
-      sortOrders: sortOrders
+      sortOrders: sortOrders,
+      price: true
     }
   },
 
   attached () {
     store.fetchBooks().then((data) => {
-      this.updateBook(data)
+      this.books = data
     })
   },
 
   methods: {
-    updateBook (data) {
-      this.books = data
-    },
     sortBy (key) {
       this.sortKey = key
       this.sortOrders[key] = this.sortOrders[key] * -1
+    },
+    changePrice () {
+      store.updatePrice(this.price).then((data) => {
+        this.books = data
+        this.price = !this.price
+      })
     }
   }
 }
