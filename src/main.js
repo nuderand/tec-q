@@ -4,6 +4,7 @@ import app from './components/app.vue'
 import welcomeView from './components/welcomeView.vue'
 import signupView from './components/signupView.vue'
 import booksView from './components/booksView.vue'
+import rankingView from './components/rankingView.vue'
 require('./../bower_components/bootstrap/dist/css/bootstrap.css')
 require('./../bower_components/font-awesome/css/font-awesome.min.css')
 require('./index.css')
@@ -19,10 +20,16 @@ router.map({
   '/signup': {
     component: signupView
   },
-  '/books': {
+  '/books/1': {
     component: booksView
+  },
+  '/ranking': {
+    component: rankingView
   }
 })
 
+router.redirect({
+  '/books': '/books/1'
+})
 router.start(app, '#app')
 

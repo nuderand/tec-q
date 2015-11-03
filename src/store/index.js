@@ -23,6 +23,20 @@ class Store extends EventEmitter {
     });
   }
 
+  fetchScraypeBookRanking() {
+    return new Promise((resolve, reject) => {
+      $.ajax({
+        url: 'http://localhost:3000/scraype_books.json',
+        type: 'GET',
+        xhrFields: {
+          withCredentials: true
+        }
+      }).done((data) => {
+        resolve(data);
+      });
+    });
+  }
+
   updatePrice(price) {
     return new Promise((resolve, reject) => {
       this.cacheBooks.forEach((item) => {
